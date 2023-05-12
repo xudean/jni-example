@@ -8,6 +8,6 @@ javac MyJavaClass.java
 4. execute command:
 ```bash
 $ cmake .
-$ cmake
+$ make
 $ ./c_call_java
 ```
