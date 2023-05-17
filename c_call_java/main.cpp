@@ -35,9 +35,12 @@ int main() {
 
 
     // 调用方法
-    jmethodID method = env->GetMethodID(cls, "printMessage", "(Ljava/lang/String;)Z");
-    jstring arg = env->NewStringUTF("Hello, world!");
-    jboolean result = env->CallBooleanMethod(obj, method, arg);
+    jmethodID method = env->GetMethodID(cls, "checkWalletAndUser", "(Ljava/lang/String;Ljava/lang/String;)Z");
+    std::cout <<"method: " <<method << std::endl;
+
+    jstring address = env->NewStringUTF("0x1234543");
+    jstring userId = env->NewStringUTF("123456789");
+    jboolean result = env->CallBooleanMethod(obj, method, address,userId);
 
     //result的值打印为1或0，分别对应true和false。
     printf("方法返回值: %d\n", result);
@@ -45,7 +48,8 @@ int main() {
     // 删除本地引用
     env->DeleteLocalRef(cls);
     env->DeleteLocalRef(obj);
-    env->DeleteLocalRef(arg);
+    env->DeleteLocalRef(address);
+    env->DeleteLocalRef(userId);
 
     // 销毁Java虚拟机
     jvm->DestroyJavaVM();

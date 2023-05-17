@@ -1,6 +1,6 @@
 public class MyJavaClass {
-    public boolean printMessage(String message) {
-        System.out.println(message);
+    public boolean checkWalletAndUser(String address, String userId) {
+        System.out.println(address+"   "+userId);
         return true;
     }
 }
