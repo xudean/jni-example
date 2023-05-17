@@ -8,7 +8,7 @@ int main() {
     JavaVMOption options[1];
 
     // 设置Java虚拟机参数
-    options[0].optionString = "-Djava.class.path=/home/xuda/CLionProjects/jni-example/c_call_java";
+    options[0].optionString = "-Djava.class.path=/home/xuda/CLionProjects/jni-example/c_call_java/test.jar";
     vm_args.version = JNI_VERSION_1_6;
     vm_args.nOptions = 1;
     vm_args.options = options;

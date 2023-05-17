@@ -11,3 +11,5 @@ $ cmake .
 $ make
 $ ./c_call_java
 ```
+
+> jar cvf test.jar MyJavaClass.class 
